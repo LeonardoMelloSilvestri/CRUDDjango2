@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div class="container">
+	  <h1 class="text-center">Produtos</h1>	     
+	  <table class="table table-light table-striped">
+	    <thead class="thead-dark">
+	      <tr>
+	        <th><b>Name</b></th>
+	        <th><b>Gender</b></th>
+	        <th><b>Level</b></th>
+	        <th><b>PositionX</b></th>
+	        <th><b>PositionY</b></th>
+	        <th><b>HighestScorePong</b></th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	    	{% for player in players %}
+	    		<tr>
+	    			<td>{{ player.name }}</td>
+	    			<td>{{ player.gender }}</td>
+	    			<td>{{ player.level }}</td>
+	    			<td>{{ player.positionX }}</td>
+	    			<td>{{ player.positionY }}</td>
+	    			<td>{{ player.highestScorePong }}</td>
+	    			<td><a href="{% url 'edit' player.id %}">Editar</a></td>
+	    			<td><a href="{% url 'exclude' player.id %}">Excluir</a></td>
+	    		</tr>	   		
+	    	{% endfor %}
+	    </tbody>	    
+	  </table>
+	 <a href="{% url 'create' %}">New Player</a>
+	</div>
+</body>
+</html>

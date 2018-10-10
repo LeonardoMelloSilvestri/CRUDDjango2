@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form method="POST">
+		{% csrf_token %}
+		{{ playerForm.as_p }}
+		<button type="submit">Salvar</button>
+	</form>
+	<a href="{% url 'show' %}">Voltar</a>	
+</body>
+</html>
